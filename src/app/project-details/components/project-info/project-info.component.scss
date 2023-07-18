@@ -1,0 +1,167 @@
+$main-primary-color:#ffb400;
+$head-color:#666;
+@use '../../../sass/media.scss' as * ;
+section{
+
+  .header{
+    padding: 80px 0px;
+    @include breackpoints(mobile){
+      padding: 50px 0px;
+    }
+    h3{
+      @include breackpoints(mobile){
+        font-size: 1.3rem;
+      }
+      font-size: 2rem;
+      text-align: center;
+      color: white;
+    }
+  }
+  .project-info{
+    color: white;
+
+    .info-list{
+       li{
+        padding: 10px 0px;
+        font-size: 1.3rem;
+        color: #666;
+        .name{
+          color: $main-primary-color;
+        }
+        span{
+          font-size: 1rem;
+          padding-left: 5px;
+          color: white;
+          @include breackpoints(mobile){
+            font-size: 0.9rem;
+
+          }
+        }
+        @include breackpoints(mobile){
+          font-size: 1.1rem;
+
+        }
+      }
+
+
+    }
+
+
+    ul{
+      list-style: none;
+    }
+
+  }
+
+  .project-links-container{
+    @include breackpoints(mobile){
+      padding: 50px 0px 80px 0px;
+    }
+    padding: 80px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3{
+      @include breackpoints(mobile){
+        font-size: 1.3rem;
+      }
+      color: white;
+      padding-bottom: 30px;
+      font-size: 2rem;
+    }
+    .project-links{
+
+      li{
+        &:hover{
+          background-color: $main-primary-color;
+        }
+        font-size: 1.3rem;
+        transition: all 0.3s;
+        cursor: pointer;
+        border-radius: 25px;
+
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        background-color:#2b2a2a;
+        color: white;
+        span{
+          font-size: 1rem;
+        }
+        a{
+
+          font-size: 1.1rem;
+          padding: 10px 15px ;
+          color: white;
+          text-decoration: none;
+          i{
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+
+  .dependence-container{
+    padding: 80px 0px;
+    @include breackpoints(mobile){
+      padding: 50px 0px ;
+
+    }
+    h3{
+
+      @include breackpoints(mobile){
+        font-size: 1.3rem;
+      }
+      font-size: 2rem;
+      text-align: center;
+      color: white;
+      padding-bottom: 30px;
+    }
+
+    .content{
+      display: flex;
+      justify-content: center;
+      .dependences{
+        display: flex;
+        flex-wrap: wrap;
+        .dep-name{
+          padding: 5px 10px;
+          border-radius: 20px;
+          margin: 0px 10px 15px 0px ;
+          background-color: #2b2a2a;
+          color: white;
+          font-size: 1rem;
+          p{
+            margin: 0;
+          }
+
+        }
+      }.dependences{
+        display: flex;
+        flex-wrap: wrap;
+        .dep-name{
+          padding: 5px 10px;
+          border-radius: 20px;
+          margin: 0px 10px 15px 0px ;
+          background-color: #2b2a2a;
+          color: white;
+          font-size: 1rem;
+          p{
+            margin: 0;
+          }
+
+        }
+      }
+    }
+
+
+  }
+
+
+}

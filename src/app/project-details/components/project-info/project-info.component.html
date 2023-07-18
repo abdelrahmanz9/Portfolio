@@ -1,0 +1,44 @@
+<section>
+  <div class="container">
+    <div class="header">
+      <h3>About <span>{{projectInfo.projectName}}</span></h3>
+    </div>
+
+    <div class="row">
+      <div class="col-12 ">
+        <div class="project-info">
+          <ul class="info-list p-0">
+            <li> Name :<span class="name"> {{projectInfo.projectName}}</span></li>
+            <li>Description :<span> {{projectInfo.description}}</span></li>
+
+
+
+          </ul>
+        </div>
+      </div>
+      <div class="col-12  ">
+        <div class="dependence-container">
+          <h3>FrameWork and dependences</h3>
+        <div class="content">
+          <div class="dependences ">
+            <div class="dep-name" *ngFor="let dep of projectInfo.dependences"><p>{{dep}}</p></div>
+
+          </div>
+
+        </div>
+        </div>
+
+      </div>
+      <div class="col-12  project-links-container">
+        <h3>Project's links</h3>
+        <ul class="project-links d-flex p-0 ">
+          <li><a [href]="projectInfo.gethupLink"><i class="fa-brands fa-github pe-1"></i> Gethub</a></li>
+          <li><a [href]="projectInfo.projectLink"><i class="fa-solid fa-link pe-1  "></i> website</a>  </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

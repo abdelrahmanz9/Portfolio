@@ -1,0 +1,59 @@
+<section class="pb-5">
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center pb-2  pb-sm-5">
+                    <h2 class="text-white h3 my-head">EDUCATION </h2>
+                </div>
+            </div>
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div>
+                    <ul class="list-unstyled d-flex  flex-column  ">
+                        <li class="d-flex position-relative my-item " *ngFor="let edu of educationInfos">
+                            <div class="position-absolute top-0 start-0 my-item-icon ">
+                                <div class="my-icon"><i class="fa-solid fa-briefcase"></i>
+                                </div>
+
+
+                            </div>
+                            <div class=" my-info ">
+                                <span class="date">{{edu.startDate}} - {{edu.endDate}}</span>
+                                <h3 class="pt-3">{{edu.education}}<span class="place"> {{edu.educationPlace}} </span></h3>
+                                <p class="text-white  "> {{edu.description}}</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <li class="d-flex position-relative my-item ">
+  <div class="position-absolute top-0 start-0 ">
+      <div class="my-icon"><i class="fa-solid fa-briefcase"></i>
+      </div>
+
+
+  </div>
+  <div class="ps-3 my-info ">
+      <span class="date">2019 - PRESENT</span>
+      <h3 class="pt-3">Bachelor of Philosophy<span class="place"> alexandria university </span></h3>
+      <p class="text-white  "> I am learning a Bachelor of Philosophy at Alexandria university and I will graduate at 2022</p>
+  </div>
+</li>
+<li class="d-flex position-relative my-item  mt-5">
+  <div class="position-absolute top-0 start-0 ">
+      <div class="my-icon"><i class="fa-solid fa-briefcase"></i>
+      </div>
+
+
+  </div>
+  <div class="ps-3 my-info ">
+      <span class="date">2020 - 2021</span>
+      <h3 class="pt-3">diploma of frontend development<span class="place"> roote academy </span></h3>
+      <p class="text-white  ">I finished a diploma in frontend development at route academe </p>
+  </div>
+</li> -->

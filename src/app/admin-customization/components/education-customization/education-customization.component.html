@@ -1,0 +1,108 @@
+<section>
+  <div class="container enter-info">
+    <div class="text-center header position-relative mx-auto  me-auto">
+      <h2 class="position-absolute w-100">customize your Education  <span>DATA</span></h2>
+      <span class="RESUME">CUSTOMIZATION</span>
+    </div>
+    <div class="form-container" >
+      <form action="" (ngSubmit)="createEducationInfo(myForm.value)" #myForm="ngForm" >
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">Start</label>
+            <input type="text" name="startDate" ngModel  required>
+            </div>
+
+          </div>
+          <div class="col-lg-6">
+            <div class="input-container">
+            <label for="" >End </label>
+            <input type="text" name="endDate" ngModel  required>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">Education</label>
+            <input type="text" name="education" ngModel  required>
+            </div>
+
+          </div>
+          <div class="col-lg-6">
+            <div class="input-container">
+            <label for="" >Place of Education </label>
+            <input type="text" name="educationPlace"  ngModel  required>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="input-container">
+            <label for="" >Description </label>
+            <textarea name="description" ngModel id="" cols="30" rows="5" required></textarea>
+            </div>
+
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="submit" [disabled]="!myForm.invalid"  >{{!editMode?"Submit":"Update Your Education Info"}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container data-container ">
+    <div class="data-header">
+      <h2>Education Data</h2>
+    </div>
+    <div class="data-items-container mt-4" *ngFor="let edu of edocationData">
+      <div class="row">
+        <div class="col-lg-6 content">
+          <div class="data-item  ">
+            <h6 class="">Start :</h6>
+            <p class=" ">{{edu.startDate}}</p>
+          </div>
+        </div>
+
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">End :</h6>
+            <p class=" ">{{edu.endDate}}</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 content">
+          <div class="data-item  ">
+            <h6 class="">Education Place :</h6>
+            <p class=" ">{{edu.education}}</p>
+          </div>
+        </div>
+
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Education Place :</h6>
+            <p class=" ">{{edu.educationPlace}}</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 content">
+          <div class="data-item  ">
+            <h6 class="">Description :</h6>
+            <p class=" ">{{edu.description}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="edit-btn me-2" (click)="onDataUpdated(edu.id)">Edit</button>
+        <button class="delete-btn bg-danger" (click)="deleteEducationItem(edu.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</section>

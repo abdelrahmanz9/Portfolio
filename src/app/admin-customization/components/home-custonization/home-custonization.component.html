@@ -1,0 +1,124 @@
+<section>
+  <div class="container enter-info">
+    <div class="text-center header position-relative mx-auto  me-auto">
+      <h2 class="position-absolute w-100">customize your Home  <span>DATA</span></h2>
+      <span class="RESUME">CUSTOMIZATION</span>
+    </div>
+    <div class="form-container" *ngIf="myFlag">
+      <form  #myForm="ngForm" (ngSubmit)="createPersonalData(myForm.value)" >
+        <div class="row">
+
+            <div class="col-lg-6">
+              <div class="input-container">
+              <label for="" >Name </label>
+              <input type="text" name="name" [(ngModel)]="homeData.name"  required>
+              </div>
+
+            </div>
+            <div class="col-lg-6">
+              <div class="input-container">
+                <label for="">Jop title</label>
+              <input type="text" name="jopTitle" [(ngModel)]="homeData.jopTitle" required>
+              </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">your personal photo Url</label>
+            <input type="text" name="personalPhoto" [(ngModel)]="homeData.personalPhoto" required>
+            </div>
+
+          </div>
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">your Small personal photo Url <small class="size-warning text-danger">the photo size must be 262 x 262</small></label>
+            <input type="text" name="smallPersonalPhoto" [(ngModel)]="homeData.smallPersonalPhoto" required>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="input-container">
+            <label for="" >Description </label>
+            <textarea name="description"  [(ngModel)]="homeData.description" required cols="30" rows="5"></textarea>
+            </div>
+
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="submit" [disabled]="!myForm.valid" >{{editMode? 'update your home data' : 'submit'}}</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="container data-container" *ngIf="!myFlag">
+    <div class="data-header">
+      <h2>Personal Data</h2>
+    </div>
+    <div class="data-items-container">
+      <div class="row">
+        <div class="col-lg-6 content">
+          <div class="data-item  ">
+            <h6 class=""> Name :</h6>
+            <p class="">{{homeData.name}}</p>
+          </div>
+        </div>
+        <div class="col-lg-6 content">
+          <div class="data-item  ">
+            <h6 class="">Jop Title :</h6>
+            <p class="">{{homeData.jopTitle}}</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-12 content">
+          <div class="data-item  ">
+            <h6 class="">Personal Photo Url :</h6>
+            <p class="">{{homeData.personalPhoto}}</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col-lg-12 content">
+          <div class="data-item  ">
+            <h6 class="">small Personal Photo Url :</h6>
+            <p class="">{{homeData.smallPersonalPhoto}}</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col-lg-12 content">
+          <div class="data-item  d-flex  ">
+            <h6 class="">Description:</h6>
+            <p class="">{{homeData.description}}</p>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+    <button type="submit" (click)="updateHomeData(homeData.id)" >Edit your Personal Info</button>
+  </div>
+
+
+
+
+
+
+
+
+
+  </section>

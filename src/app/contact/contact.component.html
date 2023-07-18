@@ -1,0 +1,132 @@
+<section class="">
+    <div class="container  ">
+        <div class="row">
+            <div class="col-lg-12 " >
+                <div class="text-center header position-relative mx-sm-auto  me-auto">
+                    <h2 class="position-absolute w-100">GET IN <span>TOUCH</span></h2>
+                    <span class="RESUME">CONTACT</span>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="contact pe-4">
+                    <h5 class="pb-3">DON'T BE SHY !</h5>
+                    <p class="pb-3">{{ContactData.description}}</p>
+                    <ul class="list-unstyled ">
+                        <li class="info-container d-flex ">
+                            <i class="fa-solid fa-map fa-2x"></i>
+                            <div class="my-info ps-3">
+                                <h6>ADDRESS POINT</h6>
+                                <p>{{ContactData.address}}</p>
+                            </div>
+                        </li>
+                        <li class="info-container d-flex pt-3 ">
+                            <i class="fa-solid fa-envelope fa-2x"></i>
+                            <div class="my-info px-3">
+                                <h6>MAIL ME</h6>
+                                <a class="pe-4" [href]="ContactData.email"
+                                    class="text-decoration-none text-white">{{ContactData.email}}</a>
+                            </div>
+                        </li>
+                        <li class="info-container d-flex  pt-3">
+                            <i class="fa-solid fa-square-phone fa-2x"></i>
+                            <div class="my-info ps-3">
+                                <h6>CALL ME</h6>
+                                <a href="Tel:+201557506897" class="text-decoration-none text-white">{{ContactData.phone}}</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="my-icons d-flex list-unstyled pb-4 pd-md-0 pt-4">
+                        <li class="pe-3"><a target="_blank"
+                                [href]="ContactData.facebookLink" class="icon-link"><i
+                                    class="fa-brands fa-facebook-f"></i></a></li>
+                        <li class="pe-3"><a target="_blank"
+                                [href]="ContactData.linkedin" class="icon-link"><i
+                                    class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li class="pe-3"><a target="_blank" [href]="ContactData.gitHup" class="icon-link"><i
+                                    class="fa-brands fa-github"></i></a></li>
+                        <li class="pe-3"><a target="_blank" [href]="ContactData.instagram"
+                                class="icon-link"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="my-inputs">
+                    <form action="https://formspree.io/f/mkneoebr"    method="post">
+                      <div  [formGroup]="contactForm" >
+                        <div class="row">
+                          <div class="col-lg-6 ">
+                              <div class="input-container ">
+                                  <input type="text" formControlName="name" placeholder="YOUR NAME" name="Name">
+                                 <div class="input-alert-container" *ngIf="contactForm.get('name')?.errors !=null &&contactForm.get('name')?.touched ">
+                                  <div class="input-alert" >
+                                    <p *ngIf="contactForm.get('name')?.errors?.['required']"><i class="fa-solid fa-bell pe-2"></i> name is required</p>
+                                    <p *ngIf="contactForm.get('name')?.errors?.['minlength']"><i class="fa-solid fa-bell pe-2"></i> name minlenght is 3</p>
+                                    <p *ngIf="contactForm.get('name')?.errors?.['maxlength']"><i class="fa-solid fa-bell pe-2"></i> name maxlenght is 15</p>
+                                    <span></span>
+                                  </div>
+                                 </div>
+
+                              </div>
+
+
+                          </div>
+                          <div class="col-lg-6 ">
+                              <div class="input-container">
+                                  <input type="text" formControlName="email" placeholder="YOUR EMAIL" name="Email">
+                                  <div class="input-alert-container" *ngIf="contactForm.get('email')?.errors !=null &&contactForm.get('email')?.touched ">
+                                    <div class="input-alert" >
+                                      <p *ngIf="contactForm.get('email')?.errors?.['required'] "> <i class="fa-solid fa-bell pe-2"></i>email is required</p>
+                                      <p *ngIf="contactForm.get('email')?.errors?.['email']"> <i class="fa-solid fa-bell pe-2"></i>email invalid</p>
+                                      <span></span>
+                                    </div>
+                                   </div>
+                              </div>
+
+
+                          </div>
+                          <div class="col-lg-12 ">
+                              <div class="input-container">
+                                  <input type="text" formControlName="subject" placeholder="YOUR SUBJECT" name="Subject">
+                                  <div class="input-alert-container" *ngIf="contactForm.get('subject')?.errors !=null &&contactForm.get('subject')?.touched ">
+                                    <div class="input-alert" >
+                                      <p *ngIf="contactForm.get('subject')?.errors?.['required']"><i class="fa-solid fa-bell pe-2"></i>subject is required</p>
+                                      <span></span>
+                                    </div>
+                                   </div>
+                              </div>
+
+                          </div>
+                          <div class="col-lg-12 ">
+                              <div class="input-container">
+                                  <textarea name="Message" formControlName="Message" id="" cols="30" rows="10 " placeholder="YOUR MESSAGE" class=" text-white" ></textarea>
+                                  <div class="input-alert-container" *ngIf="contactForm.get('Message')?.errors !=null &&contactForm.get('Message')?.touched ">
+                                    <div class="input-alert" >
+                                      <p *ngIf="contactForm.get('Message')?.errors?.['required']"><i class="fa-solid fa-bell pe-2"></i> Message is required</p>
+                                      <span></span>
+                                    </div>
+                                   </div>
+
+                              </div>
+                              <button class="my-btn "type="submit" [disabled]="contactForm.invalid" >
+                                <span><i class="fa-solid fa-paper-plane"></i></span>
+
+                                SEND MASSAGE
+                            </button>
+
+                          </div>
+
+                      </div>
+                      </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- Feel free to get in touch with me. I am always open to discussing new projects,
+                        creative ideas or opportunities to be part of your visions. -->

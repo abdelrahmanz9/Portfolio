@@ -1,0 +1,31 @@
+<section class="d-flex ">
+    <div class="color-rotate"></div>
+    <div class="container-fluid my-container">
+        <div class="row">
+            <div class="col-lg-5 col-12 big-container">
+                <div class=" img-container ms-lg-4   mx-auto " >
+                    <img [src]="homeData.personalPhoto" class="w-100 big-img"  alt="">
+                    <img [src]="homeData.smallPersonalPhoto" class="w-100 d-none small-img" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 align-items-center d-flex col-12  ">
+                <div class="info">
+                    <h1 class="my-name pb-lg-3 pt-4 ">
+                        I'm {{homeData.name}}.
+                        <div class="major pt-3">{{homeData.jopTitle}}</div>
+                    </h1>
+                    <p class="pb-lg-5">
+                      {{homeData.description}}
+                        <!-- I'm a egyption based front‑end developer focused on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me. -->
+                    </p>
+
+                    <a class="about-btn text-decoration-none" (click)="goSlide()" routerLink="/about">
+                        MORE ABOUT ME
+                        <span class="my-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        <span class="hover"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

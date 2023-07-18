@@ -1,0 +1,80 @@
+$main-primary-color:#ffb400;
+$head-color:#666;
+@use '../../../sass/media.scss' as * ;
+
+.carousel{
+  z-index: 0;
+  overflow: hidden;
+  height: 600px;
+  @include breackpoints(mobile){
+    height: fit-content;
+  }
+  &:hover .carousel-control-prev{
+    left: 70px;
+    @include breackpoints(mobile){
+      left: 30px;
+    }
+
+  }
+  &:hover .carousel-control-next{
+    right: 70px;
+    @include breackpoints(mobile){
+      right: 30px;
+    }
+
+  }
+  position: relative;
+  display: block !important;
+  .carousel-control-prev{
+    @include breackpoints(mobile){
+      width: 35px;
+      height: 35px;
+    }
+    width: 60px;
+    height: 60px;
+    background-color:$head-color;
+    top: 50%;
+    left: -70px;
+    transform: translateY(-50%);
+    opacity: 1;
+    border-radius: 50%;
+    transition: 0.3s all;
+    &:hover{
+      background-color: $main-primary-color;
+    }
+    i{
+      @include breackpoints(mobile){
+        font-size: 0.8rem;
+      }
+      color: white;
+      font-size: 1.3rem;
+    }
+  }
+
+  .carousel-control-next{
+    @include breackpoints(mobile){
+      width: 35px;
+      height: 35px;
+    }
+    width: 60px;
+    height: 60px;
+    background-color:$head-color;
+    top: 50%;
+    right: -70px;
+    transform: translateY(-50%);
+    opacity: 1;
+    border-radius: 50%;
+    transition: 0.3s all;
+    &:hover{
+      background-color: $main-primary-color;
+
+    }
+    i{
+      @include breackpoints(mobile){
+        font-size: 0.8rem;
+      }
+      color: white;
+      font-size: 1.3rem;
+    }
+  }
+}

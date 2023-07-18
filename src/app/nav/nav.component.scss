@@ -1,0 +1,117 @@
+$main-primary-color:#ffb400;
+$head-color:#666;
+@use '../sass/media.scss' as * ;
+header{
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translatey(-50%);
+    z-index: 9999999;
+
+
+}
+
+
+
+
+.my-icon{
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: #2b2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s all;
+    i{
+        color: white;
+    }
+}
+
+.nav-item{
+    z-index: 12;
+    margin-bottom: 30px;
+    cursor: pointer;
+    &:hover .my-icon {
+        background-color: $main-primary-color;
+
+    }
+    &:hover .nav-link .my-link-name{
+        opacity: 1 ;
+        transform: translateX(0px);
+
+    }
+}
+
+.on-hover{
+    background-color: $main-primary-color;
+    height: fit-content;
+    h3{
+        height: fit-content;
+    }
+}
+
+.nav-link{
+    .my-link-name{
+        background-color: $main-primary-color;
+        height: fit-content;
+        padding: 13px 25px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+
+        top: 0;
+        right: 0;
+        position: absolute;
+        right: 50%;
+
+        transform: translateX(10%);
+        opacity: 0;
+        transition: 0.3s all;
+        z-index: -1;
+        color: white;
+    }
+}
+
+.active-link{
+    background-color: $main-primary-color !important;
+}
+
+
+@media screen and (max-width:991px) {
+
+    header{
+        top: auto;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        height: fit-content;
+        transform: translatey(0px);
+        background-color: #2b2a2a;
+
+    }
+   .nav-container{
+    display: flex;
+   }
+
+   .nav-container{
+    width: 100%;
+    justify-content: space-around;
+   }
+   .my-icon{
+    background-color:#444 ;
+
+   }
+
+   .nav-item{
+    margin-bottom: 0px;
+    margin: 5px 0px;
+   }
+
+
+   .my-link-name{
+    display: none;
+   }
+
+}

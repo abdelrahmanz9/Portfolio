@@ -1,0 +1,97 @@
+<section class="">
+    <div class="container">
+        <div class="row pt-5 g-4">
+            <div class="col-lg-12">
+                <div class="header-container">
+                    <div class="text-center header position-relative mx-sm-auto me-auto ">
+                        <h2 class="position-absolute w-100">MY <span>PORTFOLIO</span></h2>
+                        <span class="RESUME">WORKS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" *ngFor="let project of projectsData">
+                <div class="img-container">
+                    <a   [routerLink]="['/project',project.id]" (click)="goSlide()">
+                        <div class="layer">
+                            <h3>{{project.projectName}}</h3>
+                        </div>
+                        <img [src]="project.thumbnail" class="w-100" alt="">
+                    </a>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+<!-- <div class="col-lg-4">
+  <div class="img-container">
+      <a target="_blank" href="https://game-library-aab29.web.app">
+          <div class="layer">
+              <h3>GAME LIBRARY PROJECT</h3>
+          </div>
+          <img src="../../assets/imgs/Screenshot 2022-09-09 161401.png" class="w-100" alt="">
+      </a>
+
+  </div>
+</div>
+<div class="col-lg-4">
+  <div class="img-container">
+      <a target="_blank" href="https://movie-5875e.web.app">
+          <div class="layer">
+              <h3>MOVIE PROJECT</h3>
+          </div>
+          <img src="../../assets/imgs/Screenshot 2022-09-09 161449.png" class="w-100" alt="">
+      </a>
+
+  </div>
+</div>
+<div class="col-lg-4">
+  <div class="img-container">
+      <a target="_blank" href="https://weather-pri.pages.dev/">
+           <div class="layer">
+              <h3>WEATHER PROJECT</h3>
+          </div>
+          <img src="../../assets/imgs/Screenshot 2022-09-09 161517.png" class="w-100" alt="">
+      </a>
+
+  </div>
+</div>
+<div class="col-lg-4">
+  <div class="img-container">
+      <a target="_blank" href="https://business-consulting.pages.dev/">
+          <div class="layer">
+              <h3>DOOM PROJECT</h3>
+          </div>
+          <img src="../../assets/imgs/Screenshot 2022-09-09 161611.png" class="w-100" alt="">
+      </a>
+
+  </div>
+</div>
+<div class="col-lg-4">
+  <div class="img-container">
+      <a target="_blank" href="https://resize-and-compress-images.web.app">
+          <div class="layer">
+              <h3>Resize & Compress Images</h3>
+          </div>
+          <img src="../../assets/imgs/Screenshot 2022-10-29 070948.png" class="w-100" alt="">
+      </a>
+
+  </div>
+</div>
+<div class="col-lg-4">
+  <div class="img-container">
+      <a target="_blank" href="https://random-password-generato-94db1.web.app">
+          <div class="layer">
+              <h3>Random Password Generator</h3>
+          </div>
+          <img src="../../assets/imgs/Screenshot 2022-10-29 070838.png" class="w-100" alt="">
+      </a>
+
+  </div>
+</div> -->

@@ -1,0 +1,40 @@
+<nav class="container">
+  <div class="nav-container">
+    <ul class="my-nav m-0">
+      <li ><a routerLink="home-customization">Home</a></li>
+      <li ><a  routerLink="about-customization">About</a></li>
+      <li ><a routerLink="skills-customization">Skills</a></li>
+      <li ><a routerLink="education-customization">Education</a></li>
+      <li ><a routerLink="portfolio-customization">Portfolio</a></li>
+      <li ><a routerLink="contact-customization">Contact</a></li>
+
+    </ul>
+
+  </div>
+
+
+
+</nav>
+
+<nav class="container">
+  <div class="small-nav" >
+
+      <div class="my-collapsible" (click)="toggle = !toggle ">
+        <span class="first"></span>
+        <span class="second"></span>
+        <span class="third"></span>
+      </div>
+
+  </div>
+  <ul class=" small-nav-list p-0 " *ngIf="toggle">
+      <li ><a (click)="toggle = false" routerLink="home-customization">Home</a></li>
+      <li ><a (click)="toggle = false"  routerLink="about-customization">About</a></li>
+      <li ><a (click)="toggle = false" routerLink="skills-customization">Skills</a></li>
+      <li ><a (click)="toggle = false" routerLink="education-customization">Education</a></li>
+      <li ><a (click)="toggle = false" routerLink="portfolio-customization">Portfolio</a></li>
+      <li ><a (click)="toggle = false" routerLink="contact-customization">Contact</a></li>
+
+  </ul>
+
+
+</nav>

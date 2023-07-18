@@ -1,0 +1,295 @@
+<section>
+  <div class="container enter-info">
+  <div class="text-center header position-relative mx-auto  me-auto">
+    <h2 class="position-absolute w-100">customize your personal  <span>DATA</span></h2>
+    <span class="RESUME">CUSTOMIZATION</span>
+  </div>
+
+  <div  class="form-container" *ngIf="myFlag">
+    <form action="" (ngSubmit)="createPersonalData( myForm.value) " #myForm="ngForm">
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-container">
+          <label for="">First Name</label>
+        <input type="text" name="firstName" [(ngModel)]="personalInfo.firstName" required>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="input-container">
+        <label for="" >Last Name </label>
+        <input type="text" name="lastName" [(ngModel)]="personalInfo.lastName"  required>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-container">
+          <label for="">Age </label>
+        <input type="number" name="age" [(ngModel)]="personalInfo.age"  required>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="input-container">
+        <label for="">Nationality  </label>
+        <input type="text" name="nationality" [(ngModel)]="personalInfo.nationality"  required>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-container">
+          <label for="">Freelance </label>
+          <select class="form-select" aria-label="Default select example" [(ngModel)]="personalInfo.freelance" name="freelance"  required>
+            <option value="Available" selected> Available</option>
+            <option value="Unavailable">unavailable</option>
+
+
+          </select>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="input-container">
+        <label for="">Address  </label>
+        <input type="text" name="address" [(ngModel)]="personalInfo.address"  required>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-container">
+          <label for="">Phone </label>
+        <input type="text" name="phone"  [(ngModel)]="personalInfo.phone" required>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="input-container">
+        <label for="">Email    </label>
+        <input type="email" name="email" [(ngModel)]="personalInfo.email"  required>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-container">
+          <label for="">Skype </label>
+        <input type="email" name="skype" [(ngModel)]="personalInfo.skype" required>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="input-container">
+        <label for="">languages  </label>
+        <input type="text" name="languages" [(ngModel)]="personalInfo.languages" required>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-container">
+          <label for="">years of experience </label>
+        <input type="number" name="yearsOfExperience" [(ngModel)]="personalInfo.yearsOfExperience" required>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="input-container">
+        <label for="">completed Projets  </label>
+        <input type="number" name="completedProjects" [(ngModel)]="personalInfo.completedProjects" required>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-container">
+          <label for="">happy customers </label>
+        <input type="number" name="happyCustomers" [(ngModel)]="personalInfo.happyCustomers" required>
+        </div>
+
+      </div>
+      <div class="col-lg-6">
+        <div class="input-container">
+        <label for="">awords won  </label>
+        <input type="number" name="awardsWon" [(ngModel)]="personalInfo.awardsWon" required>
+        </div>
+
+      </div>
+      <div class="col-lg-12">
+        <div class="input-container">
+        <label for="">my cv  </label>
+        <input type="text" name="myCv" [(ngModel)]="personalInfo.myCv" required>
+        </div>
+
+      </div>
+    </div>
+    <div class="btn-container">
+      <button type="submit" [disabled]="!myForm.valid" >{{editMode?'Update Personal Info':'Supmite personal Info'}}</button>
+    </div>
+
+
+    </form>
+    </div>
+
+  </div>
+
+  <div class="container data-container "  *ngIf="!myFlag"  >
+  <div class="data-header">
+    <h2>Personal Data</h2>
+  </div>
+
+  <div class="data-items-container">
+
+      <div class="row">
+        <div class="col-lg-6 content">
+          <div class="data-item  ">
+            <h6 class="">First Name :</h6>
+            <p class="">{{personalInfo.firstName}}</p>
+          </div>
+        </div>
+
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Last Name :</h6>
+            <p class="">{{personalInfo.lastName}}</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Age :</h6>
+            <p class="">{{personalInfo.age}}</p>
+          </div>
+
+        </div>
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Nationality :</h6>
+            <p class="">{{personalInfo.nationality}}</p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Freelance :</h6>
+            <p class="">{{personalInfo.freelance}}</p>
+          </div>
+
+        </div>
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Address :</h6>
+            <p class="">{{personalInfo.address}}</p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Phone :</h6>
+            <p class="">{{personalInfo.phone}}</p>
+          </div>
+
+        </div>
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Email :</h6>
+            <p class="">{{personalInfo.email}}</p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">Skype :</h6>
+            <p class="">{{personalInfo.skype}}</p>
+          </div>
+
+        </div>
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">languages :</h6>
+            <p class="">{{personalInfo.languages}}</p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">years of experience :</h6>
+            <p class="">{{personalInfo.yearsOfExperience}}</p>
+          </div>
+
+        </div>
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">completed Projets :</h6>
+            <p class="">{{personalInfo.completedProjects}}</p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">happy customers :</h6>
+            <p class="">{{personalInfo.happyCustomers}}</p>
+          </div>
+
+        </div>
+        <div class=" col-lg-6 content">
+          <div class="data-item">
+            <h6 class="">awords won :</h6>
+            <p class="">{{personalInfo.awardsWon}}</p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class=" col-lg-12 content">
+          <div class="data-item">
+            <h6 class="">my cv :</h6>
+            <p class="">{{personalInfo.myCv}}</p>
+          </div>
+
+        </div>
+        
+
+      </div>
+
+    </div>
+    <button type="submit" (click)="updateInfo(personalInfo.id)" >Edit your Personal Info</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+</section>

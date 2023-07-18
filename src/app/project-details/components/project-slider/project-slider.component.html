@@ -1,0 +1,30 @@
+
+
+
+
+
+<section >
+  <div class="container">
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item' " *ngFor="let image of supImages ; index as i">
+          <img [src]="image" class="d-block w-100" alt="...">
+        </div>
+
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+</section>
+

@@ -1,0 +1,47 @@
+$main-primary-color: #ffb400;
+$head-color: #666;
+@use '../sass/media.scss' as * ;
+
+section{
+  padding: 50px 0px;
+  .my-head{
+    h2{
+      font-weight:600 ;
+      @include breackpoints(mobile){
+        text-align: start;
+      }
+    }
+  }
+
+  .skill-container{
+
+    padding-bottom: 40px;
+    .skill-name{
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      h3{
+        font-size: 1.5rem;
+        @include breackpoints(mobile){
+          font-size: 1.2rem;
+        }
+      }
+
+      p{
+       margin-bottom: 0rem;
+      }
+    }
+
+
+      .progress{
+        background-color: $head-color;
+        height: 0.7rem;
+
+        .progress-bar{
+          background-color: $main-primary-color;
+        }
+      }
+  }
+
+
+}

@@ -1,0 +1,92 @@
+<section >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 pb-4">
+                <div class="text-center header position-relative mx-sm-auto me-auto">
+                    <h2 class="position-absolute my-head">ABOUT <span>ME</span></h2>
+                    <span class="RESUME">RESUME</span>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="pb-5 pb-sm-0">
+                    <h3 class="pb-3 personal-head">PERSONAL INFOS </h3>
+                    <div class="col-12 d-block d-sm-none">
+                        <div class="small-img mx-auto mb-4">
+                            <img src="../../assets/imgs/small.jpg" class="w-100" alt="">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-around row ">
+                        <ul class="list-unstyled my-info  m-0 col-lg-5 col-12">
+                            <li><span>First Name :</span>  {{personalData.firstName}}</li>
+                            <li><span>Last Name :</span>  {{personalData.lastName}}</li>
+                            <li> <span>Age :</span> {{personalData.age}}</li>
+                            <li> <span>Nationality :</span> {{personalData.nationality}}</li>
+                            <li> <span>Freelance :</span> {{personalData.freelance}}</li>
+                        </ul>
+                        <ul class="list-unstyled my-info col-lg-7  col-12 ">
+                            <li> <span>Address :</span> {{personalData.address}}</li>
+                            <li> <span>Phone :</span> +{{personalData.phone}}</li>
+                            <li> <span>Email :</span>  {{personalData.email}}</li>
+                            <li> <span>Skype :</span> {{personalData.skype}}</li>
+                            <li> <span>languages :</span> {{personalData.languages}}</li>
+                        </ul>
+                    </div>
+                    <a class="about-btn text-decoration-none" [href]="personalData.myCv" target="_blank">
+                        Download CV
+                        <span class="my-icon"><i class="fa-solid fa-download"></i></span>
+                        <span class="hover"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 co-12">
+                <div class="row g-4 pt-sm-5 pt-lg-0">
+                    <div class="col-6">
+                        <div class="more-info">
+                            <h3>{{personalData.yearsOfExperience}}
+                                <i class="fa-solid fa-plus "></i>
+                            </h3>
+                            <h5 class="my-name pb-3">
+                                YEARS OF <br> EXPERIENCE
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="more-info">
+                            <h3>{{personalData.completedProjects}}
+                                <i class="fa-solid fa-plus "></i>
+                            </h3>
+                            <h5 class="my-name pb-3">
+                                COMPLETED <br> PROJECTS
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="more-info">
+                            <h3>{{personalData.happyCustomers}}
+                                <i class="fa-solid fa-plus "></i>
+                            </h3>
+                            <h5 class="my-name pb-3">
+                                HAPPY <br> CUSTOMERS
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="more-info">
+                            <h3>{{personalData.awardsWon}}
+                                <i class="fa-solid fa-plus "></i>
+                            </h3>
+                            <h5 class="my-name pb-3">
+                                AWARDS <br> WON
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-skills></app-skills>
+<app-exp></app-exp>
+
+

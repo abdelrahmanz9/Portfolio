@@ -1,0 +1,174 @@
+<section>
+  <div class="container enter-info">
+    <div class="text-center header position-relative mx-auto  me-auto">
+      <h2 class="position-absolute w-100">customize your portfolio  <span>DATA</span></h2>
+      <span class="RESUME">CUSTOMIZATION</span>
+    </div>
+    <div class="form-container">
+      <form action="" [formGroup]="reactiveForm" (ngSubmit)="createProject(reactiveForm.value)">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">Project Name</label>
+              <input type="text" formControlName="projectName"  >
+            </div>
+
+          </div>
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">Project thumbnail image url</label>
+              <input type="text" formControlName="thumbnail"  >
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="input-label" >
+            <label>Sup Images</label>
+          </div>
+          <div class="col-lg-4"  *ngFor="let image of  getImage().controls; index as i">
+            <div class="input-container" formArrayName="supImages">
+
+              <input type="text"  formControlName="{{i}}" >
+              <div class="delete-icon"  (click)="deleteInput(i,'supImages')">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="add-more-btn">
+            <button type="button" (click)="newPtn('supImages')">add more images </button>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="input-label">
+            <label>Frameworks & Dependences</label>
+          </div>
+          <div class="col-lg-3"  *ngFor="let dependence of getDependences().controls ;index as i">
+
+            <div class="input-container " formArrayName="dependences">
+
+              <input type="text"  formControlName="{{i}}" >
+              <div class="delete-icon" (click)="deleteInput(i,'dependences')">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="add-more-btn">
+            <button type="button" (click)="newPtn('dependences')">add more dependence </button>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">Gethup link </label>
+              <input type="text"  formControlName="gethupLink" >
+            </div>
+
+          </div>
+          <div class="col-lg-6">
+            <div class="input-container">
+              <label for="">project link </label>
+              <input type="text"  formControlName="projectLink" >
+            </div>
+
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="input-container">
+              <label for="">Description </label>
+              <textarea formControlName="description" id="" cols="30" rows="5"></textarea>
+            </div>
+
+          </div>
+
+
+        </div>
+        <div class="btn-container">
+          <button type="submit" [disabled]="!reactiveForm.valid"  >{{!editMode?'Submit':'Update Your Project Data'}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container data-container "    >
+    <div class="data-header">
+      <h2>Personal Data</h2>
+    </div>
+
+    <div class="data-items-container" *ngFor="let project of projectsData">
+
+        <div class="row">
+          <div class="col-lg-9 content">
+            <div class="data-item  ">
+              <h6 class="">Project Name :</h6>
+              <p class="">{{project.projectName}}</p>
+            </div>
+            <div class="data-item  ">
+              <h6 class="">Gethup link :</h6>
+              <p class="">{{project.gethupLink}}</p>
+            </div>
+            <div class="data-item  ">
+              <h6 class="">project link :</h6>
+              <p class="">{{project.projectLink}}</p>
+            </div>
+            <div class="data-item  ">
+              <h6 class="">Frameworks & Dependences :</h6>
+              <ul class="p-0">
+                  <li *ngFor="let depen of project.dependences ">{{depen}}</li>
+
+              </ul>
+            </div>
+            <div class="data-item  ">
+              <h6 class="">Description :</h6>
+              <p class="">{{project.description}}</p>
+            </div>
+          </div>
+
+          <div class=" col-lg-3 content">
+           <div class="main-image">
+            <img [src]="project.thumbnail" class="w-100 " alt="">
+           </div>
+
+          </div>
+
+        </div>
+        <div class="row">
+          <div class=" sup-images-header ">
+            <h6 class="">Sup Images :</h6>
+
+          </div>
+          <div class="col-lg-2 col-6" *ngFor="let image of project.supImages">
+            <div class="sup-images-container">
+              <img [src]="image" class="w-100 " alt="">
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="btns">
+          <button type="submit" (click)="onProjectUpdated(project.id)"  >Edit Your Project</button>
+        <button type="submit" class="bg-danger" (click)="deleteProjectData(project.id)"  >Delete Your Project</button>
+        </div>
+      </div>
+
+
+
+
+
+
+  </div>
+</section>

@@ -1,0 +1,118 @@
+$main-primary-color: #ffb400;
+$head-color: #666;
+@use '../../../sass/media.scss' as * ;
+
+
+nav{
+
+  .nav-container{
+    @include breackpoints(mobile){
+      display: none;
+
+    }
+    padding-top: 10px;
+
+    justify-content: center;
+    display: flex;
+
+
+    .my-nav{
+
+      padding: 20px 0px;
+      list-style: none;
+      display: flex;
+
+
+      li{
+        padding-right: 30px;
+        text-align: center;
+        font-size: 1.1rem;
+        a{
+          color: white;
+          text-decoration: none;
+          transition: all 0.3s;
+          &:hover{
+            color: $main-primary-color;
+          }
+        }
+      }
+
+
+    }
+  }
+
+
+
+
+}
+
+nav{
+
+
+
+
+  .small-nav{
+    @include breackpoints(mobile){
+      display: flex;
+
+    }
+    padding-top: 20px;
+    display: none;
+      justify-content: end;
+
+
+      .my-collapsible{
+        &:hover .small-nav-list{
+          height: 100%;
+        }
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        span{
+          width: 80%;
+          height: 2px;
+          background-color: white;
+        }
+      }
+
+
+
+  }
+
+  .small-nav-list{
+
+    z-index: 9999999999;
+    width: 100%;
+    position: absolute;
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: $main-primary-color;
+
+
+    li{
+      padding: 20px 0px;
+      text-align: center;
+      font-size: 1.1rem;
+
+      a{
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+        &:hover{
+          color: black;
+        }
+      }
+    }
+
+
+  }
+}
+

@@ -1,0 +1,263 @@
+$main-primary-color: #ffb400;
+$head-color: #666;
+@use '../sass/media.scss' as * ;
+section{
+  padding: 50px 0px;
+  @include breackpoints(mobile){
+    padding-bottom: 100px;
+  }
+}
+.header {
+    width: fit-content;
+    margin-bottom: 50px;
+    @include breackpoints(mobile){
+      margin-bottom: 30px;
+    }
+
+    h2 {
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        font-size: 3rem;
+        font-weight: 900;
+        color: white;
+        transform: translateX(-50%) translateY(-50%);
+
+        span {
+            color: $main-primary-color;
+        }
+
+    }
+
+    .RESUME {
+        z-index: -1;
+        font-size: 7rem;
+        font-weight: 900;
+        letter-spacing: 10px;
+        color: rgba(255, 255, 255, 0.07);
+    }
+}
+
+.contact {
+    h5 {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    p {
+        color: white;
+        font-size: 0.9rem;
+    }
+}
+
+.info-container {
+    i {
+        color: $main-primary-color;
+        font-size: 33px !important;
+    }
+
+    h6 {
+        color: white;
+        font-size: 1rem;
+        opacity: 0.8;
+    }
+}
+
+.my-icons {
+
+    li {
+        &:hover .icon-link {
+            background-color: $main-primary-color;
+        }
+    }
+
+    .icon-link {
+
+
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: #2b2a2a;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s all;
+
+        i {
+            color: white;
+        }
+    }
+}
+
+.my-inputs {
+
+  @include breackpoints(small){
+    margin-bottom: 40px;
+}
+    input {
+        &:focus {
+            border: 1px solid $main-primary-color;
+        }
+        transition: 0.2s all;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background-color: #252525;
+        outline: none;
+        border: none;
+        color: white;
+
+    }
+
+    textarea {
+        &:focus {
+            border: 1px solid $main-primary-color;
+        }
+
+        width: 100%;
+        outline: none;
+        background-color: #252525;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 20px;
+    }
+
+    .my-btn {
+        &:hover::before {
+            left: 0;
+            z-index: -1;
+        }
+
+        &::before {
+            content: "";
+            width: 200px;
+            height: 100px;
+            background-color: $main-primary-color;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transition: 0.5s all;
+        }
+
+        width: fit-content;
+        position: relative;
+        border-radius: 30px;
+        padding: 15px 70px 15px 35px;
+        text-align: center;
+        overflow: hidden;
+        color: white;
+        background-color: transparent;
+        border: 1px solid $main-primary-color;
+
+        span {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: $main-primary-color;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: -1;
+            right: -1px;
+            bottom: 0;
+            color: white;
+        }
+    }
+}
+
+.input-container {
+    padding-bottom: 30px;
+    position: relative;
+}
+
+
+
+@media screen and (max-width:767px) {
+
+
+    .header {
+        h2 {
+            width: 100%;
+            font-size: 3rem !important;
+        }
+
+       .RESUME{
+        font-size: 4rem ;
+       }
+
+    }
+
+    .my-icons{
+        margin-bottom: 40px !important;
+    }
+
+}
+
+.input-alert-container{
+ margin-top: 20px;
+  background-color: white;
+  width: fit-content;
+  position: absolute;
+  z-index: 999999999999999;
+
+  .input-alert{
+  position: relative;
+    width: fit-content;
+    padding: 10px;
+
+  p{
+  margin: 0;
+  z-index: 9999;
+  i{
+    color: red;
+  }
+  }
+    span{
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      position: absolute;
+      top: 0px;
+      left: 10px;
+      transform:translateY(-50%) rotate(45deg);
+      background-color: white;
+      z-index: -1;
+    }
+  }
+}
+
+
+
+
+
+@media screen and (max-width:576px) {
+
+
+    .header{
+
+        h2{
+            font-size: 2rem !important;
+            width: 100%;
+        }
+    }
+
+    .RESUME{
+        font-size: 3rem !important;
+    }
+
+    .personal-head{
+        font-size: 21px;
+    }
+
+    .contact{
+        h5{
+            font-size: 1.5rem;
+            padding-top: 1.5rem;
+        }
+    }
+
+
+}

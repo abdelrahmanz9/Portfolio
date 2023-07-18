@@ -1,0 +1,119 @@
+$main-primary-color:#ffb400;
+$head-color:#666;
+
+section{
+    padding-bottom: 150px;
+}
+.header{
+    width: fit-content;
+
+    h2{
+
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        font-size: 3rem;
+        font-weight: 900;
+        color: white;
+        transform: translateX(-50%)
+         translateY(-50%);
+        span{
+            color: $main-primary-color;
+        }
+
+    }
+    .RESUME{
+      
+        z-index: -1;
+        font-size: 7rem;
+        font-weight: 900;
+        letter-spacing: 10px;
+        color: rgba(255, 255, 255, 0.07);
+    }
+}
+
+
+.img-container{
+    position: relative;
+    border-radius: 7px;
+    overflow: hidden;
+    &:hover .layer{
+        opacity: 1;
+
+    }
+
+    &:hover .layer h3 {
+        transform: translateY(0);
+    }
+    .layer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background-color: $main-primary-color;
+        color: white;
+        opacity: 0;
+        transition: 0.5s all;
+
+        h3{
+            font-size: 1.2rem;
+            transform: translateY(-50%);
+            transition: 0.5s all;
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+
+
+    .header{
+
+        h2{
+            font-size: 3rem !important;
+            width: 100%;
+        }
+    }
+
+    .RESUME{
+        font-size: 6rem !important;
+    }
+
+    .personal-head{
+        font-size: 21px;
+    }
+
+
+
+
+}
+
+@media screen and (max-width:576px) {
+
+.header-container{
+    padding-bottom: 70px;
+}
+    .header{
+
+
+        h2{
+            font-size: 2rem !important;
+            width: 100%;
+        }
+    }
+
+    .RESUME{
+        font-size: 4rem !important;
+    }
+
+    .personal-head{
+        font-size: 21px;
+    }
+
+
+
+
+}

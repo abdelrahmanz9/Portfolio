@@ -1,0 +1,197 @@
+$main-primary-color: #ffb400;
+$head-color: #666;
+@use '../sass/media.scss' as * ;
+
+
+section {
+    height: 100vh;
+
+}
+.my-container{
+  display: flex;
+align-items: center;
+}
+
+.color-rotate {
+    height: 200%;
+    width: 100%;
+    background-color: $main-primary-color;
+    transform: rotate(-15deg);
+    left: -83%;
+    top: -50%;
+    position: fixed;
+    z-index: -1;
+}
+
+.img-container {
+
+    border-radius: 30px;
+    box-shadow: 0 0 7px rgb(0 0 0 / 90%);
+
+    overflow: hidden;
+    width: 75%;
+}
+
+.info p {
+    color: white;
+    padding-right: 150px;
+    line-height: 35px;
+    font-family: 400;
+}
+
+.my-name {
+    position: relative;
+    font-weight: 700;
+    font-size: 51px;
+    @include breackpoints(mobile){
+      font-size: 1.2rem;
+
+    }
+
+    &::before {
+        content: '';
+        width: 40px;
+        height: 4px;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        background-color: $main-primary-color;
+    }
+
+    padding-left: 65px;
+    color: $main-primary-color;
+
+    .major {
+        color: white;
+    }
+}
+
+.about-btn {
+
+    &:hover .hover {
+
+        transform: translateX(0%)
+    }
+
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid $main-primary-color;
+    color: white;
+    padding: 15px 60px 15px 30px;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden !important;
+    display: inline-block;
+    z-index: 7;
+
+
+    .my-icon {
+        height: 55px;
+        width: 55px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+        right: -3px;
+
+        border-radius: 50%;
+
+
+        background-color: $main-primary-color;
+    }
+
+    .hover {
+        position: absolute;
+        width: 250px;
+        height: 55px;
+        background-color: $main-primary-color;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        transform: translateX(100%);
+        z-index: -1;
+        transition: 0.5s all;
+    }
+}
+
+
+
+
+@media screen and (max-width:991px) {
+
+
+    .container-fluid {
+        width: 100%;
+    }
+
+    .big-container {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    .img-container {
+        width: 270px;
+        height: 270px;
+        border-radius: 50%;
+        border: 4px solid #252525;
+
+        .big-img {
+            display: none;
+        }
+
+        .small-img {
+            display: block !important;
+        }
+    }
+
+    .color-rotate {
+        display: none;
+    }
+
+    .info {
+        text-align: center;
+
+        .my-name {
+
+            padding: 0px;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        p {
+            padding-right: 0px;
+            font-size: 14px;
+            line-height: 25px;
+        }
+    }
+
+}
+
+@media screen and (max-width:804px) {
+
+
+
+
+}
+
+@media screen and (max-width:650px) {
+
+
+    .img-container {
+        width: 230px;
+        height: 230px;
+        display: block;
+    }
+
+
+
+    p {
+
+        font-size: 12px !important;
+    }
+}
